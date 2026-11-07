@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Garagem Perfect Car | Som para UTV</title>
+    <meta
+      name="description"
+      content="Escolha o seu UTV e o stage do som. Veja o UTV em 3D e fale com a Garagem Perfect Car."
+    />
+    <link rel="icon" href="/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <canvas id="stage" aria-hidden="true"></canvas>
+
+    <div id="loading" role="status">
+      <img src="/logo.png" alt="" width="96" />
+      <p>Carregando modelo 3D</p>
+      <span class="bar"><i id="loading-bar"></i></span>
+    </div>
+
+    <header class="top">
+      <a class="brand" href="#inicio" aria-label="Garagem Perfect Car">
+        <img src="/logo.png" alt="Garagem Perfect Car" height="64" />
+      </a>
+      <nav class="tabs" aria-label="Seções do site">
+        <a id="tab-apresentacao" href="#inicio">Apresentação</a>
+        <a id="tab-visualizador" href="#visualizador">Visualizador</a>
+      </nav>
+      <a class="top-cta" href="#contato">Falar com a loja</a>
+    </header>
+
+    <main>
+      <section id="inicio" class="slide left">
+        <div class="copy">
+          <h1>Monte o som do seu UTV antes de instalar.</h1>
+          <p>
+            Escolha o seu UTV e o stage do som. Veja o UTV em 3D e fale com a loja já com tudo definido.
+          </p>
+          <p class="hint">Role a página para começar.</p>
+        </div>
+      </section>
+
+      <section id="utv" class="slide left">
+        <div class="copy builder">
+          <h2>Qual é o seu UTV?</h2>
+          <div class="group">
+            <div id="utvs" class="options" role="group" aria-label="Modelo do UTV"></div>
+            <span class="value" id="utv-note"></span>
+          </div>
+          <div class="group">
+            <span class="label" id="lbl-paint">Cor do UTV: <strong class="paint-name"></strong></span>
+            <div class="chips paint-chips" role="group" aria-labelledby="lbl-paint"></div>
+          </div>
+        </div>
+        <div class="drag-area" aria-label="Arraste para girar o UTV"></div>
+      </section>
+
+      <section id="stage-sec" class="slide left">
+        <div class="copy builder">
+          <h2>Qual stage você vai querer?</h2>
+          <p>
+            O painel de som fica na traseira da gaiola, com alto-falantes, anéis de LED e um display com o seu nome.
+            Cada modelo de UTV tem três kits.
+          </p>
+          <div class="group">
+            <div id="stages" class="options" role="group" aria-label="Stage do som"></div>
+          </div>
+          <p class="fine">Exemplo ilustrativo. A configuração real de cada stage é definida pela loja.</p>
+        </div>
+        <div class="drag-area" aria-label="Arraste para girar o UTV"></div>
+      </section>
+
+      <section id="contato" class="slide left">
+        <div class="copy">
+          <h2>Gostou do seu?</h2>
+          <p class="summary">
+            <strong id="sum-utv"></strong> com <strong id="sum-stage"></strong>.
+          </p>
+          <p>Mande a sua escolha para a loja. A conversa já abre com o UTV e o stage que você escolheu.</p>
+          <a id="whatsapp" class="cta" href="#" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+          <a class="cta ghost" href="#visualizador">Ver o UTV de todos os ângulos</a>
+        </div>
+        <footer>
+          Demonstração. Modelo 3D de UTV “CAN AM maverick” por
+          <a href="https://sketchfab.com/AGRO-3D" target="_blank" rel="noopener">AGRO-3D</a>, licença
+          <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>, via Sketchfab.
+        </footer>
+      </section>
+    </main>
+
+    <section id="viewer" aria-label="Visualizador 3D">
+      <div class="vpanel">
+        <h2>Visualizador</h2>
+        <p class="vhint">Arraste para girar. Role ou use dois dedos para aproximar. Botão direito para mover.</p>
+
+        <div class="group">
+          <span class="label" id="lbl-views">Vistas</span>
+          <div id="views" class="row wrap" role="group" aria-labelledby="lbl-views">
+            <button type="button" data-view="frente">Frente</button>
+            <button type="button" data-view="lateral">Lateral</button>
+            <button type="button" data-view="traseira">Traseira</button>
+            <button type="button" data-view="topo">Topo</button>
+          </div>
+        </div>
+
+        <div class="group">
+          <span class="label" id="lbl-paint-v">Cor do UTV: <strong class="paint-name"></strong></span>
+          <div class="chips paint-chips" role="group" aria-labelledby="lbl-paint-v"></div>
+        </div>
+
+        <div class="row wrap tools">
+          <button type="button" id="autorotate" aria-pressed="false">Girar sozinho</button>
+          <button type="button" id="recenter">Recentralizar</button>
+        </div>
+      </div>
+    </section>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

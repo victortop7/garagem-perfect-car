@@ -1,0 +1,22 @@
+{
+  "name": "garagem-perfect-car",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "deploy": "npm run build && gh-pages -d dist --dotfiles"
+  },
+  "dependencies": {
+    "@types/three": "^0.170.0",
+    "three": "^0.170.0",
+    "typescript": "^7.0.2",
+    "vite": "^7.3.7"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0",
+    "sharp": "^0.35.5"
+  }
+}
